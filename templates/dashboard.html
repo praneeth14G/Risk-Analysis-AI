@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard — RiskExplain AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">RiskExplain AI</span>
+    <div class="nav-links">
+      <span>Welcome, {{ user.name }} ({{ user.role }})</span>
+      <a href="/risk-form" class="btn primary">+ New Risk</a>
+      <a href="/logout" class="btn secondary">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>Dashboard</h2>
+
+    <!-- Sample Risks from HuggingFace -->
+    <section class="card">
+      <h3>Sample Risk Scenarios (HuggingFace Dataset)</h3>
+      <table class="risk-table">
+        <thead><tr><th>#</th><th>Description</th><th>Sentiment</th></tr></thead>
+        <tbody>
+          {% for s in samples %}
+          <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.description[:100] }}...</td>
+            <td>{{ ['Negative','Neutral','Positive'][s.sentiment] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Risk History -->
+    <section class="card">
+      <h3>Your Previous Risk Reports</h3>
+      {% if history %}
+        {% for h in history %}
+        <div class="history-item">
+          <strong>{{ h.category }}</strong> — Severity: {{ h.severity }}
+          <p>{{ h.description[:80] }}...</p>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p class="muted">No reports yet. Create your first risk analysis above.</p>
+      {% endif %}
+    </section>
+
+    <!-- Web Search (AI + Firecrawl) -->
+    <section class="card">
+      <h3>Search Financial Regulations (AI-Powered)</h3>
+      <div class="search-box">
+        <input type="text" id="searchQuery" placeholder="e.g. latest Basel IV requirements 2024">
+        <button onclick="doSearch()" class="btn primary">Search</button>
+      </div>
+      <div id="searchResult" class="ai-result"></div>
+    </section>
+
+    {% if is_admin %}
+    <section class="card admin-panel">
+      <h3>Admin Panel</h3>
+      <p>You have admin access. You can manage users and view all system data.</p>
+      {% if all_users %}
+        <ul>
+          {% for uname, udata in all_users.items() %}
+          <li>{{ uname }} — {{ udata.role }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+    {% endif %}
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

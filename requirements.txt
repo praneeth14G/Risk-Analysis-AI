@@ -1,0 +1,7 @@
+flask
+google-generativeai
+momento
+datasets
+python-dotenv
+requests
+firecrawl-py

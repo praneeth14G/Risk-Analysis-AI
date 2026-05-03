@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Risk Report — RiskExplain AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">RiskExplain AI</span>
+    <div class="nav-links">
+      <a href="/risk-form" class="btn primary">+ New Risk</a>
+      <a href="/dashboard" class="btn secondary">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>AI-Generated Risk Report</h2>
+
+    <div class="report-meta card">
+      <span class="badge {{ report.severity | lower }}">{{ report.severity }}</span>
+      <strong>{{ report.category }}</strong> &nbsp;|&nbsp;
+      Probability: {{ report.probability }}/10 &nbsp;|&nbsp;
+      Impact: {{ report.impact }}/10
+    </div>
+
+    <div class="card">
+      <h3>Risk Explanation</h3>
+      <p>{{ report.explanation }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Mitigation Strategies</h3>
+      <p style="white-space: pre-wrap;">{{ report.mitigation }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Structured Summary</h3>
+      <pre class="summary-box">{{ report.summary }}</pre>
+    </div>
+
+    <div class="card">
+      <h3>Compliance Commentary</h3>
+      <p style="white-space: pre-wrap;">{{ report.compliance }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Original Input</h3>
+      <p><strong>Description:</strong> {{ report.description }}</p>
+    </div>
+  </main>
+</body>
+</html>

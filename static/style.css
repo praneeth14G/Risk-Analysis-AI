@@ -1,0 +1,101 @@
+/* static/style.css — Clean, professional styling */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+/* LOGIN PAGE */
+.login-page {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; background: #1a1a2e;
+}
+.login-card {
+  background: white; padding: 2.5rem; border-radius: 12px;
+  width: 100%; max-width: 400px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.login-card h1 { color: #1a1a2e; margin-bottom: 0.25rem; }
+.subtitle { color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.hint { font-size: 0.8rem; color: #999; margin-top: 1rem; text-align: center; }
+
+/* NAVBAR */
+.navbar {
+  background: #1a1a2e; color: white; padding: 1rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.brand { font-size: 1.2rem; font-weight: 600; color: #4fc3f7; }
+.nav-links { display: flex; gap: 1rem; align-items: center; }
+.nav-links span { color: #ccc; font-size: 0.9rem; }
+
+/* CONTAINER */
+.container { max-width: 960px; margin: 2rem auto; padding: 0 1.5rem; }
+.container h2 { margin-bottom: 1.5rem; color: #1a1a2e; }
+
+/* CARD */
+.card {
+  background: white; border-radius: 10px; padding: 1.5rem;
+  margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.card h3 { margin-bottom: 1rem; color: #333; font-size: 1rem; }
+
+/* FORMS */
+label { display: block; margin: 1rem 0 0.3rem; font-weight: 500; font-size: 0.9rem; color: #444; }
+input[type=text], input[type=password], input[type=number], select, textarea {
+  width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #ddd;
+  border-radius: 6px; font-size: 0.95rem; outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, select:focus, textarea:focus { border-color: #4fc3f7; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+/* BUTTONS */
+.btn {
+  padding: 0.5rem 1.2rem; border: none; border-radius: 6px;
+  cursor: pointer; font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; display: inline-block; transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn.primary  { background: #4fc3f7; color: #1a1a2e; }
+.btn.secondary { background: #e0e0e0; color: #333; }
+.btn.large    { width: 100%; padding: 0.8rem; font-size: 1rem; margin-top: 1rem; }
+
+/* ALERTS */
+.alert.error { background: #ffeaea; border: 1px solid #f44; color: #c00;
+  padding: 0.8rem; border-radius: 6px; margin-bottom: 1rem; }
+
+/* TABLES */
+.risk-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.risk-table th, .risk-table td {
+  text-align: left; padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+.risk-table th { background: #f5f5f5; font-weight: 600; }
+
+/* REPORT */
+.report-meta { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+.badge { padding: 0.25rem 0.7rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.badge.low      { background: #e8f5e9; color: #2e7d32; }
+.badge.medium   { background: #fff8e1; color: #f57f17; }
+.badge.high     { background: #fff3e0; color: #e65100; }
+.badge.critical { background: #fce4ec; color: #c62828; }
+.summary-box {
+  background: #f5f5f5; padding: 1rem; border-radius: 6px;
+  font-family: monospace; font-size: 0.85rem; white-space: pre-wrap;
+}
+
+/* HISTORY */
+.history-item { border-left: 3px solid #4fc3f7; padding: 0.6rem 0.8rem; margin-bottom: 0.8rem; }
+.muted { color: #999; font-size: 0.9rem; }
+
+/* SEARCH */
+.search-box { display: flex; gap: 0.8rem; margin-bottom: 1rem; }
+.search-box input { flex: 1; }
+.ai-result { background: #f0f8ff; border-radius: 6px; padding: 1rem;
+  font-size: 0.9rem; line-height: 1.7; white-space: pre-wrap; min-height: 40px; }
+
+/* ADMIN */
+.admin-panel { border: 1.5px solid #ffcc02; background: #fffde7; }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Risk Analysis — RiskExplain AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="brand">RiskExplain AI</span>
+    <div class="nav-links">
+      <a href="/dashboard" class="btn secondary">← Dashboard</a>
+      <a href="/logout" class="btn secondary">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>New Risk Analysis</h2>
+    <div class="card">
+      <form method="POST" action="/generate-report">
+
+        <label>Risk Category</label>
+        <select name="category" required>
+          <option value="">Select category...</option>
+          <option>Credit Risk</option>
+          <option>Market Risk</option>
+          <option>Operational Risk</option>
+          <option>Liquidity Risk</option>
+          <option>Compliance Risk</option>
+          <option>Reputational Risk</option>
+          <option>Cyber Risk</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label>Probability (1–10)</label>
+            <input type="number" name="probability" min="1" max="10" placeholder="e.g. 7" required>
+          </div>
+          <div>
+            <label>Impact (1–10)</label>
+            <input type="number" name="impact" min="1" max="10" placeholder="e.g. 8" required>
+          </div>
+          <div>
+            <label>Severity</label>
+            <select name="severity" required>
+              <option value="">Select...</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+              <option>Critical</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Risk Description</label>
+        <textarea name="description" rows="4"
+          placeholder="Describe the risk in detail..."
+          required></textarea>
+
+        <button type="submit" class="btn primary large">
+          Generate AI Risk Report
+        </button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
