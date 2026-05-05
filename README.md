@@ -1,4 +1,4 @@
-# 🛡️ RiskExplain AI
+# RiskExplain AI
 
 **RiskExplain AI** is an intelligent financial risk analysis platform powered by AI. It allows risk officers and analysts to input risk scenarios and instantly receive AI-generated explanations, mitigation strategies, structured summaries, and compliance commentary — all in plain English.
 
