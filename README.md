@@ -4,22 +4,22 @@
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🔐 **Role-based Authentication** — Secure login system with `admin` and `user` roles
-- 🤖 **AI-Powered Risk Reports** — Generate four types of AI analysis per risk:
-  - **Explanation** — Plain-English breakdown for executive audiences
-  - **Mitigation Strategies** — 4 actionable steps to reduce the risk
-  - **Structured Summary** — Formatted risk report with scores and priorities
-  - **Compliance Commentary** — Audit-ready notes referencing Basel III, COSO, ISO 31000
-- 🌐 **Live Web Search** — Firecrawl-powered search to pull real-time risk intelligence from the web
-- 🧠 **Risk History** — User sessions persist risk records using Momento serverless cache (24-hour TTL)
-- 📊 **Sample Dataset** — HuggingFace `financial_phrasebank` dataset loaded on the dashboard for quick testing
-- 👤 **Admin Panel** — Admin users can view all registered user accounts
+- Role-based Authentication — Secure login system with `admin` and `user` roles
+- AI-Powered Risk Reports — Generate four types of AI analysis per risk:
+  - Explanation — Plain-English breakdown for executive audiences
+  - Mitigation Strategies — 4 actionable steps to reduce the risk
+  - Structured Summary — Formatted risk report with scores and priorities
+  - Compliance Commentary — Audit-ready notes referencing Basel III, COSO, ISO 31000
+- Live Web Search — Firecrawl-powered search to pull real-time risk intelligence from the web
+- Risk History — User sessions persist risk records using Momento serverless cache (24-hour TTL)
+- Sample Dataset — HuggingFace `financial_phrasebank` dataset loaded on the dashboard for quick testing
+- Admin Panel — Admin users can view all registered user accounts
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 riskexplain-ai/
@@ -54,7 +54,7 @@ riskexplain-ai/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -107,18 +107,18 @@ Open your browser and navigate to: **[http://localhost:5000](http://localhost:50
 
 ---
 
-## 🔑 Default Login Credentials
+##  Default Login Credentials
 
 | Username   | Password   | Role   |
 |------------|------------|--------|
 | `admin`    | `admin123` | Admin  |
 | `officer1` | `risk2024` | User   |
 
-> ⚠️ **These are demo credentials.** Replace them with a proper database and hashed passwords before deploying to production.
+>  **These are demo credentials.** Replace them with a proper database and hashed passwords before deploying to production.
 
 ---
 
-## 🧭 Application Routes
+##  Application Routes
 
 | Route              | Method     | Description                                  |
 |--------------------|------------|----------------------------------------------|
@@ -133,7 +133,7 @@ Open your browser and navigate to: **[http://localhost:5000](http://localhost:50
 
 ---
 
-## 🤖 AI Analysis Pipeline
+## AI Analysis Pipeline
 
 When a user submits a risk via the form, four parallel AI prompts are sent to **OpenRouter (GPT-3.5-turbo)**:
 
@@ -150,7 +150,7 @@ Results are saved to **Momento cache** (keyed per user + timestamp) and displaye
 
 ---
 
-## 🧠 Memory & Persistence
+## Memory & Persistence
 
 Risk records are stored using **Momento Serverless Cache**:
 
@@ -160,7 +160,7 @@ Risk records are stored using **Momento Serverless Cache**:
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 | Package              | Purpose                                      |
 |----------------------|----------------------------------------------|
@@ -174,7 +174,7 @@ Risk records are stored using **Momento Serverless Cache**:
 
 ---
 
-## 🔒 Security Notes
+## Security Notes
 
 - Sessions are secured with a Flask `SECRET_KEY`
 - All routes check for authenticated sessions before rendering
@@ -183,7 +183,7 @@ Risk records are stored using **Momento Serverless Cache**:
 
 ---
 
-## 🛠️ Future Improvements
+## Future Improvements
 
 - [ ] Database integration (PostgreSQL / MongoDB) for persistent user management
 - [ ] Password hashing with `bcrypt`
@@ -194,5 +194,3 @@ Risk records are stored using **Momento Serverless Cache**:
 
 ---
 
-
-> Built with ❤️ using Flask, OpenRouter AI, Momento Cache, and Firecrawl.
